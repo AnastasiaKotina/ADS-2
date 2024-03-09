@@ -1,3 +1,4 @@
+// Copyright 2022 NNTU-CS
 #include <cmath>
 #include "alg.h"
 
@@ -5,14 +6,11 @@
 double pown(double value, uint16_t n) {
     if (n == 0) {
         return 1;
-    }
-    else if (n == 1) {
+    } else if (n == 1) {
         return value;
-    }
-    else if (n % 2 == 0) {
+    } else if (n % 2 == 0) {
         return pown(value * value, n / 2);
-    }
-    else {
+    } else {
         return value * pown(value * value, n / 2);
     }
 }
@@ -25,9 +23,7 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    for (int i = 0; i <= n; i++) {
-        return pown(x, n) / fact(n);
-    }
+    return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count) {
